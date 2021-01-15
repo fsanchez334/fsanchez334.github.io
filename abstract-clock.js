@@ -4,7 +4,7 @@ function setup() {
 
 function draw() {
 	
-	let s = second();
+    let s = second();
     let m = minute();
     let h = hour();
   
@@ -25,11 +25,12 @@ function draw() {
   
     //Here is whre I am going to map the numbers;
     let s_improved = map(s, 0, 60, 0, 5);
-    let m_improved = 5//map(m, 0, 60, 0, 12);
+    let m_improved = map(m, 0, 60, 0, 12);
     let h_improved = h; //This was the only number I couldn't really map strategically because it messed up the for loops and the number of boxes
   
     if(h > 12){
       h_improved = h -12;
+      //Instead of using the mapping function, I did this little trick of just subtracting 12 from the military hour that time functions give us 
     }
   
     
