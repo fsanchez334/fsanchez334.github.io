@@ -3,6 +3,7 @@ body {
   padding: 0;
   position: center;
   background-color: lightblue;
+  background-image: url("https://media.giphy.com/media/3o7qDNfxtNRtLVv8qs/giphy.gif");
 }
 canvas {
   display: block;
