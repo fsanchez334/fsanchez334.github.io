@@ -1,37 +1,71 @@
-## Welcome to GitHub Pages
+function setup() {
+	createCanvas(800,600,); // make an HTML canvas element width x height pixels
+}
 
-You can use the [editor on GitHub](https://github.com/fsanchez334/fsanchez334.github.io/edit/main/README.md) to maintain and preview the content for your website in Markdown files.
+function draw() {
+	
+	let s = second();
+    let m = minute();
+    let h = hour();
+  
+    if(h < 12){
+      background('blue');
+      //Represents the morning
+    }
+  
+    if(h >= 12 && h <= 18){
+      background('yellow');
+      //Represents the afternoon
+    }
+  
+    if(h > 18){
+      background('maroon');
+      //Represents the evening
+    }
+  
+    //Here is whre I am going to map the numbers;
+    let s_improved = map(s, 0, 60, 0, 5);
+    let m_improved = 5//map(m, 0, 60, 0, 12);
+    let h_improved = h; //This was the only number I couldn't really map strategically because it messed up the for loops and the number of boxes
+  
+    if(h > 12){
+      h_improved = h -12;
+    }
+  
+    
+    fill('orange');
+    line(0, 0, 225, 200);
+    line(800, 600, 300, 450);
+    line(800, 0, 300, 300);
+    line(0,600, 225, 500);
+    rect(225, 200, 240, 300);
+  
+    ellipse(350, 350, 60, 60);
+    
+    //The following code will be used to calculate the number of hours to create the appropriate anount of boxes
+  //EG: 1 -> 1 box 
+    for(let i = 0; i < h_improved; i++){
+      fill('red');
+      translate(15, 0);
+      rect(210, 200, 25, 25);
+    }
+  
+  //The following will be used to get the amount of minutes to convert them into circles
+  for(let j = 1; j < m_improved; j++){
+      fill('#0f0');
+      translate(20, 0);
+      ellipse(220, 480, 15, 30);
+  }
+  textAlign(CENTER);
+  textSize(20);
+  text('Minute:' + m, 280, 525);
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
-
-### Markdown
-
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/fsanchez334/fsanchez334.github.io/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+  
+  //The following code will be used to make the ellipse in the center move across the center with each interval
+  for(let z = 0; z < s_improved; z++){
+   stroke('neon');
+   fill('black');
+   translate(13* s_improved, 0);
+   ellipse(0, 350, 30, 30); 
+  }   
+}
