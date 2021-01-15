@@ -10,3 +10,15 @@ canvas {
   position: center;
   margin:auto;
 }
+
+#Name{
+  color: orange;
+}
+
+#Title{
+  color: orange;
+}
+
+#ID{
+  color: orange;
+}
