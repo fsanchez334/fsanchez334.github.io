@@ -1,6 +1,7 @@
 body {
   margin: 0;
   padding: 0;
+  position: center;
 }
 canvas {
   display: block;
