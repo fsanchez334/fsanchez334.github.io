@@ -3,8 +3,7 @@ function setup() {
 }
 
 function draw() {
-	
-	let s = second();
+    let s = second();
     let m = minute();
     let h = hour();
   
@@ -51,7 +50,7 @@ function draw() {
     }
   
   //The following will be used to get the amount of minutes to convert them into circles
-  for(let j = 1; j < m_improved; j++){
+  for(let j = 0; j < m_improved; j++){
       fill('#0f0');
       translate(20, 0);
       ellipse(220, 480, 15, 30);
