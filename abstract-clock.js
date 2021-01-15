@@ -4,7 +4,7 @@ function setup() {
 
 function draw() {
 	
-    let s = second();
+	let s = second();
     let m = minute();
     let h = hour();
   
@@ -30,7 +30,6 @@ function draw() {
   
     if(h > 12){
       h_improved = h -12;
-      //Instead of using the mapping function, I did this little trick of just subtracting 12 from the military hour that time functions give us 
     }
   
     
